@@ -42,7 +42,7 @@ public class TestControllerIntegrationTests {
     @Autowired 
     MockHttpServletRequest request; //6
     
-    @Before //7
+    @Before // 7
     public void setup() {
     	mockMvc =
     			MockMvcBuilders.webAppContextSetup(this.wac).build(); //2
