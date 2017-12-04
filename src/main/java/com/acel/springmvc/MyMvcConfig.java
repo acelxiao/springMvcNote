@@ -27,6 +27,7 @@ import com.acel.springmvc.interceptor.DemoInterceptor;
 @ComponentScan("com.acel.springmvc")
 public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 
+	//视图转发路径设置
 	@Bean
 	public InternalResourceViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -36,20 +37,19 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {// 2
 		return viewResolver;
 	}
 
+	//设置静态资源直接访问
 	@Override
 	public void addResourceHandlers(ResourceHandlerRegistry registry) {
-
 		registry.addResourceHandler("/assets/**").addResourceLocations(
 				"classpath:/assets/");// 3
-
 	}
 
+	// 拦截器配置
 	@Bean
-	// 1
 	public DemoInterceptor demoInterceptor() {
 		return new DemoInterceptor();
 	}
-
+	// 拦截器配置
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {// 2
 		registry.addInterceptor(demoInterceptor());

@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class SseController {
 	
-	@RequestMapping(value="/push",produces="text/event-stream") //1
+	@RequestMapping(value="/push",produces="text/event-stream") //向客户端推送通知,需要新版浏览器支持该格式
 	public @ResponseBody String push(){
 		 Random r = new Random();
         try {

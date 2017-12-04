@@ -13,7 +13,7 @@
         </encoder>
     </appender>
 
-      <logger name="org.springframework.web" level="DEBUG"/> <!-- 1 -->
+      <logger name="org.springframework.web" level="DEBUG"/> <!-- 1设置org.springframework.web包下的类日志级别 -->
     <root level="info">
         <appender-ref ref="console"/>
     </root>
